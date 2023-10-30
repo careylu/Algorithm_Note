@@ -24,7 +24,7 @@ public:
     {
         if (this != &other) //&(*_ptr)相当于&&other,得到的是地址
         {
-            release();
+            release();  // 重要！这一步是考虑，本对象要指向other对象地址，如果自己本身只有一个引用计数（代表自身），则可以进行销毁对象了
             _ptr = other._ptr;
             _count = other._count;
             if (_count)
@@ -34,7 +34,7 @@ public:
     }
 
     // 析构函数
-    ~SmartPointer()
+    ~SmartPointer() // 多个对象都会调用析构函数，所以不会造成内存泄露，最后一定会走到0进行delete成员变量
     {
         release();
     }
@@ -65,6 +65,9 @@ private:
         {
             delete _ptr;
             delete _count;
+            cout << "release !!!" << endl;
+        } else {
+            cout << "enter !!!" << endl;
         }
     }
 
@@ -82,4 +85,12 @@ int main()
     SmartPointer<int> sp2(sp1);
     cout << "sp1 use_count: " << sp1.use_count() << endl;   // _count是指针类型，所以是浅拷贝
     cout << "sp2 use_count: " << sp2.use_count() << endl;
+
+    SmartPointer<int> sp3(new int(50));
+    cout << "sp3 use_count: " << sp3.use_count() << endl;
+    sp3 = sp1;
+    cout << "sp3 use_count: " << sp3.use_count() << endl;
+    cout << "sp1 use_count: " << sp1.use_count() << endl;
+    cout << endl;
+
 }
