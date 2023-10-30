@@ -10,7 +10,7 @@ class SmartPointer
 {
 public:
     // 构造函数
-    explicit SmartPointer(T* ptr = NULL) : _ptr(ptr), _count(ptr ? new int(1) : NULL) {}
+    explicit SmartPointer(T* ptr = nullptr) : _ptr(ptr), _count(ptr ? new int(1) : nullptr) {}
 
     // 拷贝构造函数
     SmartPointer(const SmartPointer<T>& other) : _ptr(other._ptr), _count(other._count)
