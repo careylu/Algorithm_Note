@@ -61,7 +61,7 @@ int findKthLargest(vector<int>& nums, int k) {
     int n = nums.size();
     int left = 0, right = n-1;
     while (left < right) {
-        int randIdx = rand()%(right-left+1);
+        int randIdx = rand() % (right - left + 1);
         swap(nums[left+randIdx], nums[right]);
         // 左边部分的个数
         int cnt = partition(nums, left, right) + 1;
@@ -71,12 +71,8 @@ int findKthLargest(vector<int>& nums, int k) {
             left = left + cnt;
             k -= cnt;
         } else {
-            return nums[left + cnt -1];
+            return nums[left + cnt - 1];
         }
     }
     return nums[left];
 }
-
-
-
-
