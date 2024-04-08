@@ -21,6 +21,10 @@
 #include<limits.h>
 using namespace std;
 
+// 给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串 的长度
+// 这道题的思路是滑动窗口或双指针，窗口内维持的是内部没有出现重复字符，
+// 我们可用一个hash表保存窗口内最长无重复子串中出现字符的下标，如果滑动到一个新的r碰到在窗口内出现的字符，
+// 那么l肯定就要往前滑动到之前出现的字符下标的下一位来保证l到r之间没有重复出现的字符。算法复杂度O(n)。
 
 int lengthOfLongestSubstring(string s) {
     unordered_map<char, int> hash;
