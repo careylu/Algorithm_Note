@@ -3,6 +3,9 @@
 // Date: 4/8/24
 
 // to_string()函数实现
+// 1. 正负号处理
+// 2. 逆序反转处理
+
 #include <iostream>
 using namespace std;
 #define max 100
