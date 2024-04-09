@@ -11,6 +11,7 @@ add_subdirectory("${PROJECT_SOURCE_DIR}/经典设计")
 add_subdirectory("${PROJECT_SOURCE_DIR}/排序")
 add_subdirectory("${PROJECT_SOURCE_DIR}/树")
 add_subdirectory("${PROJECT_SOURCE_DIR}/栈和队列")
+add_subdirectory("${PROJECT_SOURCE_DIR}/链表")
 
 
 
