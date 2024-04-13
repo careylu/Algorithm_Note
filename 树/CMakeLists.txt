@@ -3,3 +3,4 @@ project(树)
 
 # 子目录
 #add_subdirectory(二叉搜索树的删除)
+add_subdirectory(572.另一棵树的子树)
