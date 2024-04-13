@@ -26,7 +26,7 @@ public:
         dp[0] = 0;
         for(int i = 1; i <= n; i++) {
             for(int j = 1; j <= amount; j++) {
-                if(j >= coins[i - 1]) {
+                if(j >= coins[i - 1]) { // 为什么是coins[i-1]是因为循环从1开始的，需要和数组的位序值比较
                     dp[j] = min(dp[j], dp[j - coins[i - 1]] + 1);   // dp[j]代表凑成j需要的最少硬币数
                 }
             }
