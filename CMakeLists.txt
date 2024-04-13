@@ -13,6 +13,7 @@ add_subdirectory("${PROJECT_SOURCE_DIR}/树")
 add_subdirectory("${PROJECT_SOURCE_DIR}/栈和队列")
 add_subdirectory("${PROJECT_SOURCE_DIR}/链表")
 add_subdirectory("${PROJECT_SOURCE_DIR}/其他")
+add_subdirectory("${PROJECT_SOURCE_DIR}/动态规划")
 
 
 
